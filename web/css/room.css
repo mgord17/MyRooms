@@ -1,0 +1,166 @@
+body{
+    padding-top: 70px;
+    color: rgb(51, 49, 49);
+    background: url(https://images.unsplash.com/photo-1534620783980-fa96320b0ce6?ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.thumbnail{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* img {
+    transition: transform .5s;
+  }
+  
+  img:hover {
+    transform: scale(1.5);
+  } */
+
+.container .jumbotron{
+    margin-top: 50px;
+}
+
+label{
+    text-align: center;
+    font-weight: 300;
+    vertical-align: middle;
+}
+
+#welcoming{
+    padding: 0px;
+}
+
+#heading{
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+    0px 8px 13px rgba(0,0,0,0.1),
+    0px 18px 23px rgba(0,0,0,0.1);
+    font-family: "Nunito";
+    text-align: center;
+    font-weight: 300;
+    font-size: 500%;
+    vertical-align: middle;
+   
+}
+#information{
+    text-align: center;
+    font-weight: 300;
+    vertical-align: middle;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    color: white;
+}
+
+
+#mainGrid{
+    border: 0.1px solid rgb(40,40,40);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: center;
+}
+
+input[type="submit"] {
+    background-color: #222;
+    color:white;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+#check{
+    margin-right: 10px;
+}
+
+#vr{
+    margin-right: 10px;
+}
+
+#price{
+    color:white;
+    font-weight: 600;
+    font-size: larger;
+}
+
+  input[type="email"] {
+    color:#9d9d9d;
+    border: none;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  input[type="date"] {
+    color:black;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  input[type="password"] {
+    color:#9d9d9d;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  .col-container {
+    display: table; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+.col {
+    display: table-cell; /* Make elements inside the container behave like table cells */
+}
+
+#information2{
+    text-align: center;
+    font-weight: 300;
+    vertical-align: middle;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    color: white;
+    height: 50rem;
+}
+  
+.container .jumbotron{
+    margin-top: 5%;
+}
+.jumbotron{
+    color: #2c3e50;
+    background:none;
+}
+
+
+#login{ 
+    padding-top: 3%;
+}
+
+.aboutClass h1{
+    color: white;
+    font-size: medium;
+}
+
+.aboutClass {
+    background-color:#2c3e50;
+    padding: 15px 15px 15px 15px;
+}
+
+#decl{
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    color: white;
+}
+
+

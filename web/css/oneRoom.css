@@ -1,0 +1,71 @@
+body{
+    padding-top: 70px;
+    color: rgb(51, 49, 49);
+}
+
+
+
+.container .jumbotron{
+    margin-top: 50px;
+}
+
+
+
+input[type="submit"] {
+    background-color: #222;
+    color:white;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+#check{
+    margin-right: 10px;
+}
+
+#vr{
+    margin-right: 10px;
+}
+
+
+  input[type="email"] {
+    color:#9d9d9d;
+    border: none;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  input[type="password"] {
+    color:#9d9d9d;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+.container .jumbotron{
+    margin-top: 5%;
+}
+.jumbotron{
+    color: #2c3e50;
+    background-color: #ecf0f1;
+}
+
+#login{ 
+    padding-top: 3%;
+}
+
+.aboutClass h1{
+    color: white;
+    font-size: medium;
+}
+
+.aboutClass {
+    background-color:#2c3e50;
+    padding: 15px 15px 15px 15px;
+}
+

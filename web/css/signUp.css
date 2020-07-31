@@ -1,0 +1,107 @@
+.jumbotron{
+    padding-left: 6rem;
+    padding-top: 6rem;
+    background: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 21px;
+}
+
+
+.jumbotron div{
+    padding-bottom: 2%;
+}
+
+label {
+    color: white;
+}
+
+input[type="submit"] {
+    background-color: #222;
+    color:white;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="number"] {
+    background-color: white;
+    color:#555353;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+input[type="text"] {
+    color:#555353;
+    border: none;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+input[type="email"] {
+    color:#555353;
+    border: none;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+input[type="password"] {
+    color:#555353;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#dt{
+    border-radius: 10px;
+    color: #555353;
+    background-color: white;
+}
+
+#day{
+    border-radius: 10px;
+    color: #555353;
+    background-color: white;
+}
+#ye{
+    border-radius: 10px;
+    color: #555353;
+    background-color: white;
+}
+body{
+    background: url(http://gobatumi.com/file-manager/files/shares/10%20Reasons/reason9.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+html{
+    height: 100%;
+}
+#agreement{
+    color: white;
+}
+
+#login{
+    padding-top: 3.4%;
+}
+
+
+
+
+
+
+/*font-size*/
+
+
+

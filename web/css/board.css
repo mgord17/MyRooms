@@ -1,0 +1,13 @@
+.container .jumbotron{
+    margin-top: 50px;
+}
+
+#icon{
+    margin-top: 15%;
+    margin-bottom: 0px;
+}
+
+#user{
+    font-family: Nunito;
+    color: white;
+}
