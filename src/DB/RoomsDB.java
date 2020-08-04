@@ -50,7 +50,7 @@ public class RoomsDB {
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         int startYear = c.get(Calendar.YEAR) - 1900;
-        int startMonth = c.get(Calendar.MONTH);
+        int startMonth = c.get(Calendar.MONTH) + 1;
         int startDay = c.get(Calendar.DAY_OF_MONTH);
         String dt = startYear + "-" + startMonth + "-" + startDay;
         return dt;
@@ -70,7 +70,7 @@ public class RoomsDB {
             query += ", \'" + boolToInt(wifi) + "\'";
             query += ", \'" + boolToInt(tv) + "\'";
             query += ", \'" + boolToInt(hotWater) + "\');";
-
+            System.out.println(query);
             stat.executeUpdate(query);
             PreparedStatement quer2 = ConnDB.prepareStatement("SELECT  max(room_id)  from rooms;");
             ResultSet res = quer2.executeQuery();
@@ -129,7 +129,7 @@ public class RoomsDB {
             return false;
         }
     }
-//    int id, Date sDate, java.util.Date eData, int pricePerDay, String img, int accountId,
+    //    int id, Date sDate, java.util.Date eData, int pricePerDay, String img, int accountId,
 //    int numberOfBeds, boolean wifi, boolean tv, boolean hotWater
     public ArrayList<Room> getRooms(){
         ArrayList<Room> allRooms = new ArrayList<Room>();

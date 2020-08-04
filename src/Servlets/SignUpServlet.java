@@ -35,6 +35,7 @@ public class SignUpServlet extends HttpServlet {
             }
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
         if(failed) request.getRequestDispatcher("Jsp/signUpFailed.jsp").forward(request, response);
     }

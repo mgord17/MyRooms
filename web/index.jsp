@@ -20,7 +20,7 @@
 
   <div class="container">
     <div class="aboutClass">
-      <h1> For More information please contact us on mail: contact@apartsrent.com </h1>
+      <h1> For More information please contact us on mail: contact@apartments.com </h1>
     </div>
   </div>
 </div>

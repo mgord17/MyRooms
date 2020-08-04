@@ -43,10 +43,9 @@
                 </label>
                 <p>Price : <var><%=rm.getPricePerDay()%></var></p>
             </div>
-<%--            <a href="Jsp/RoomInfo.jsp" >See More</a>--%>
 
             <form class="form-inline" id = "roomInf" action="RoomDataServlet" method="post">
-                <input name="id" id ="id" type="text" value=<%="\"" + Integer.toString(rm.getRoomId()) + "\""%> readonly>
+                <input name="id" id ="id" style="visibility: hidden; width: 0px" type="text" value=<%="\"" + Integer.toString(rm.getRoomId()) + "\""%> readonly>
                 <input type="submit" class="like" value="See More" />
             </form>
         </div>

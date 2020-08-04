@@ -27,6 +27,7 @@ public class LoginServlet extends HttpServlet {
             }
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
         if(failed) request.getRequestDispatcher("Jsp/loginFailed.jsp").forward(request, response);
     }

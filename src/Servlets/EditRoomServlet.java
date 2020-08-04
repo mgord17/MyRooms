@@ -1,71 +1,68 @@
 package Servlets;
 
-import DB.MyDBInfo;
 import Manager.AccountManager;
 import Manager.RoomManager;
-import Model.Account;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.nio.file.Files;
+import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
-@WebServlet(name = "AddRoomServlet", urlPatterns = {"/AddRoomServlet"})
-public class AddRoomServlet extends HttpServlet {
+@WebServlet(name = "EditRoomServlet", urlPatterns = {"/EditRoomServlet"})
+public class EditRoomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        AccountManager am = AccountManager.getInstance();
-        String email = (String)request.getSession().getAttribute("email");
-        String password = (String)request.getSession().getAttribute("password");
+        RoomManager rm = RoomManager.getInstance();
+        System.out.println("************");
+        System.out.println("************");
+        System.out.println("************");
+
         try {
-            int id = Integer.parseInt(am.getAcc(email,password).getId());
-            RoomManager rm = RoomManager.getInstance();
+            int roomId = Integer.parseInt((String)request.getSession().getAttribute("id"));
+//            System.out.println(request.getSession().getAttribute("id"));
             int year = Integer.parseInt(request.getParameter("Year"));
             int month = Integer.parseInt(request.getParameter("Month"));
             int day = Integer.parseInt(request.getParameter("Day"));
             Date start = new Date(year,month,day);
+//            System.out.println(start);
             int year1 = Integer.parseInt(request.getParameter("Year2"));
             int month1 = Integer.parseInt(request.getParameter("Month2"));
             int day1 = Integer.parseInt(request.getParameter("Day2"));
             Date end = new Date(year1,month1,day1);
+//            System.out.println(end);
             int price =Integer.parseInt(request.getParameter("price"));
+//            System.out.println(price);
             int nBeds =Integer.parseInt(request.getParameter("nBeds"));
+//            System.out.println(nBeds);
             boolean wifi = true;
             boolean tv = true;
             boolean hotWater = true;
             if(request.getParameter("check1") == null)  wifi = false;
             if(request.getParameter("check2") == null) tv = false;
             if(request.getParameter("check3") == null) hotWater = false;
-            writefile((String)request.getParameter("img"));
-            rm.addRoom(start, end, price,request.getParameter("img"),id,nBeds,wifi,tv,hotWater);
+            AccountManager am = AccountManager.getInstance();
+
+            String email = (String)request.getSession().getAttribute("email");
+            String password = (String)request.getSession().getAttribute("password");
+            int AccId = Integer.parseInt(am.getAcc(email,password).getId());
+//            System.out.println(AccId);
+            rm.updateRoom(roomId, start, end, price, request.getParameter("img"), AccId, nBeds, wifi, tv, hotWater);
+//            System.out.println("aqaaaa");
             request.getRequestDispatcher("index.jsp").forward(request, response);
-        } catch (NoSuchAlgorithmException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
 
 
 
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-    private void writefile(String f){
-
-        try{
-            String newName = "images/" + MyDBInfo.NEW_FILE_NAME + ".jpg";
-            File file = new File(newName);
-            MyDBInfo.NEW_FILE_NAME += "x";
-            System.out.println("File has been written");
-
-        }catch(Exception e){
-            System.out.println("Could not create file");
-        }
+        request.getSession().setAttribute("id", request.getParameter("id"));
+        request.getRequestDispatcher("Jsp/EditRoom.jsp").forward(request, response);
     }
 }

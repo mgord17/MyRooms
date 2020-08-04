@@ -72,7 +72,7 @@
                 <p></p>
                 <label>TV:  <%=rm.isTv()%> </label>
                 <p></p>
-                <label>Hot woter: <%=rm.isHotWater()%></label>
+                <label>Hot water: <%=rm.isHotWater()%></label>
                 <p></p>
                 <label id = "price">Price per day: <%=rm.getPricePerDay()%></label>
                 <p></p>
