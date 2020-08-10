@@ -80,6 +80,9 @@
             </div>
 
         </div>
+        <%
+            if(request.getSession().getAttribute("user") != null){
+        %>
         <div class="row" id = "mainGrid">
 
             <div class="col-lg-4 col-md-6 col-sm-6" id ="information">
@@ -100,6 +103,9 @@
                 </form>
             </div>
         </div>
+        <%
+            }
+        %>
     </div>
 
 

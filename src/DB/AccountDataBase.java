@@ -78,7 +78,7 @@ public class AccountDataBase{
 
     public boolean updateAccount(String email, String toUpdate, String newValue) {
         try {
-            if(containsEmail(email) == false || toUpdate == "email" || toUpdate == "account_id") return false;
+            if(containsEmail(email) == false || toUpdate.equals("email") || toUpdate.equals("account_id")) return false;
             if(email == null || toUpdate == null || newValue == null) return false;
             stat.executeUpdate("update accounts set " + toUpdate + " = \'" + newValue + "\' where email = \'" + email + "\';");
             return true;

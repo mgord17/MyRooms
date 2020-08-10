@@ -67,9 +67,9 @@
                 <label>Email: <%=curAcc.getEmail()%></label><br>
                 <label>Username: <%=curAcc.getUsername()%></label><br>
                 <label>Phone: <%=curAcc.getPhone()%></label><br>
+                <a href="EditAccount.jsp">Edit Account</a>
             </div>
         </div>
-
 
         <label class = "heading">Add room</label>
 

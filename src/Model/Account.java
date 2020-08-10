@@ -11,6 +11,7 @@ public class Account {
     private String password;
     private String phone;
 
+
     public Account(String account_id, String first_name, String last_name, String birth_date, String email, String username, String password, String phone) {
         this.account_id = account_id;
         this.first_name = first_name;
