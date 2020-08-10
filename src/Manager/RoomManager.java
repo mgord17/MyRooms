@@ -26,7 +26,7 @@ public class RoomManager {
 
     public Integer addRoom(Date sDate, Date eDate, Integer pricePerDay, String img, Integer accountId,
                            Integer numberOfBeds, boolean wifi, boolean tv, boolean hotWater) {
-        if (!sDate.before(eDate) || pricePerDay < 0 || accountId < 1 || numberOfBeds < 0)
+        if (pricePerDay < 0 || accountId < 1 || numberOfBeds < 0)
             return -1;
         return rdb.addRoom(sDate, eDate, pricePerDay, img, accountId, numberOfBeds, wifi, tv, hotWater);
     }
@@ -36,7 +36,7 @@ public class RoomManager {
     }
     public boolean updateRoom(Integer room_id, Date sDate, Date eDate,  Integer pricePerDay, String img, Integer accountId,
                               Integer numberOfBeds, boolean wifi, boolean tv, boolean hotWater) {
-        if (room_id < 1 || !sDate.before(eDate) || pricePerDay < 0 || accountId < 1 || numberOfBeds < 0) return false;
+        if (room_id < 1 || pricePerDay < 0 || accountId < 1 || numberOfBeds < 0) return false;
         return rdb.updateRoom(room_id, sDate, eDate, pricePerDay, img, accountId, numberOfBeds, wifi, tv, hotWater);
     }
 

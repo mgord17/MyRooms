@@ -65,9 +65,10 @@
         <input type="checkbox" name="check3">
     </div>
     <%-- ---------------------------------------------------------------------------------------------------- --%>
+    <%--
     <p>
-        <label style="color:black;">from:
-            <select name="Month" id = "dt">
+        <label style="color:white;">from:
+            <select name="Month" id = "dt" style="color:gray; border-radius: 10px;">
                 <option>Month</option>
                 <option value="00">January</option>
                 <option value="01">Febuary</option>
@@ -83,7 +84,7 @@
                 <option value="11">December</option>
             </select>
 
-            <select name="Day" id = "day">
+            <select name="Day" id = "day" style="color:gray; border-radius: 10px;">
                 <option>Day</option>
                 <% for(int i=1; i<=31; i++){
                     String day = Integer.toString(i); %>
@@ -91,7 +92,7 @@
                 <% } %>
 
             </select>
-            <select name="Year" id= "ye">
+            <select name="Year" id= "ye" style="color:gray; border-radius: 10px;">
                 <option >Year</option>
                 <% for(int i=2020; i<2100; i++){
                     String year = Integer.toString(i); %>
@@ -102,8 +103,8 @@
     </p>
 
     <p>
-        <label style="color:black;">to:
-            <select name="Month2" id = "dt1">
+        <label style="color:white;">to:
+            <select name="Month2" id = "dt1" style="color:gray; border-radius: 10px;">
                 <option>Month</option>
                 <option value="00">January</option>
                 <option value="01">Febuary</option>
@@ -119,7 +120,7 @@
                 <option value="11">December</option>
             </select>
 
-            <select name="Day2" id = "day2">
+            <select name="Day2" id = "day2" style="color:gray; border-radius: 10px;">
                 <option>Day</option>
                 <% for(int i=1; i<=31; i++){
                     String day = Integer.toString(i); %>
@@ -127,7 +128,7 @@
                 <% } %>
 
             </select>
-            <select name="Year2" id= "ye2">
+            <select name="Year2" id= "ye2" style="color:gray; border-radius: 10px;">
                 <option >Year</option>
                 <% for(int i=2020; i<2100; i++){
                     String year = Integer.toString(i); %>
@@ -136,7 +137,7 @@
             </select>
         </label>
     </p>
-
+    --%>
     <%-- ---------------------------------------------------------------------------------------------------- --%>
 
     <label for="img">Select image:</label>

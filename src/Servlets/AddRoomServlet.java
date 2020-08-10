@@ -24,14 +24,14 @@ public class AddRoomServlet extends HttpServlet {
         try {
             int id = Integer.parseInt(am.getAcc(email,password).getId());
             RoomManager rm = RoomManager.getInstance();
-            int year = Integer.parseInt(request.getParameter("Year"));
-            int month = Integer.parseInt(request.getParameter("Month"));
-            int day = Integer.parseInt(request.getParameter("Day"));
-            Date start = new Date(year,month,day);
-            int year1 = Integer.parseInt(request.getParameter("Year2"));
-            int month1 = Integer.parseInt(request.getParameter("Month2"));
-            int day1 = Integer.parseInt(request.getParameter("Day2"));
-            Date end = new Date(year1,month1,day1);
+//            int year = Integer.parseInt(request.getParameter("Year"));
+//            int month = Integer.parseInt(request.getParameter("Month"));
+//            int day = Integer.parseInt(request.getParameter("Day"));
+//            Date start = new Date(year,month,day);
+//            int year1 = Integer.parseInt(request.getParameter("Year2"));
+//            int month1 = Integer.parseInt(request.getParameter("Month2"));
+//            int day1 = Integer.parseInt(request.getParameter("Day2"));
+//            Date end = new Date(year1,month1,day1);
             int price =Integer.parseInt(request.getParameter("price"));
             int nBeds =Integer.parseInt(request.getParameter("nBeds"));
             boolean wifi = true;
@@ -40,32 +40,16 @@ public class AddRoomServlet extends HttpServlet {
             if(request.getParameter("check1") == null)  wifi = false;
             if(request.getParameter("check2") == null) tv = false;
             if(request.getParameter("check3") == null) hotWater = false;
-            writefile((String)request.getParameter("img"));
-            rm.addRoom(start, end, price,request.getParameter("img"),id,nBeds,wifi,tv,hotWater);
+
+            rm.addRoom(new Date(), new Date(), price,request.getParameter("img"),id,nBeds,wifi,tv,hotWater);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
-
-
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
-    private void writefile(String f){
-
-        try{
-            String newName = "images/" + MyDBInfo.NEW_FILE_NAME + ".jpg";
-            File file = new File(newName);
-            MyDBInfo.NEW_FILE_NAME += "x";
-            System.out.println("File has been written");
-
-        }catch(Exception e){
-            System.out.println("Could not create file");
-        }
     }
 }

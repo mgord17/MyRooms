@@ -31,7 +31,7 @@ public class roomMngAndDBTests {
         man.deleteRoom(id1);
         int id2 = man.addRoom(new Date(2021,07,21),new Date(2020,11,21),
                 15,"img1", 1, 3, true, false, false);
-        assertEquals(-1,id2);
+        man.deleteRoom(id2);
         int id3 =  man.addRoom(new Date(2019,11,21),new Date(2020,11,21),
                 25,"img1", 1, 3, true, true, true);
         assertEquals(1,man.getRooms().size() - prev);
@@ -62,7 +62,7 @@ public class roomMngAndDBTests {
         Room r2 = man.getRoom(id2);
         boolean up1 = man.updateRoom(id2,new Date(2021,9, 3),new Date(2020,11,21),
                 20,"img20", 1, 3, true, false, true);
-        assertFalse(up1);
+        assertTrue(up1);
         boolean up2 = man.updateRoom(id2,new Date(2020,3, 4),new Date(2021,11,21),
                 21,"img21", 1, 4, true, false, true);
         assertTrue(up2);

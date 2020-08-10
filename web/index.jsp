@@ -16,6 +16,7 @@
     <h1> <i class="fa fa-home"></i>Find Your Dream Apartment </h1>
     <p>We help you in finding the aparement you've been looking for </p>
   </div>
+
   <jsp:include page="Jsp/AllRooms.jsp"/>
 
   <div class="container">

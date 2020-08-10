@@ -11,7 +11,9 @@
       <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="https://commons.apache.org/proper/commons-fileupload/javadocs/api-release/index.html" />
+    </JAVADOC>
     <SOURCES />
   </library>
 </component>

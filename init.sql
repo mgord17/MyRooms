@@ -1,6 +1,5 @@
 USE myrooms;
 -- Drop Tables
-DROP TABLE IF EXISTS Pictures;
 DROP TABLE IF EXISTS Rooms;
 DROP TABLE IF EXISTS Accounts;
 

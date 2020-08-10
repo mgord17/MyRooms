@@ -16,22 +16,22 @@ import java.util.Date;
 public class EditRoomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RoomManager rm = RoomManager.getInstance();
-        System.out.println("************");
-        System.out.println("************");
-        System.out.println("************");
+//        System.out.println("************");
+//        System.out.println("************");
+//        System.out.println("************");
 
         try {
             int roomId = Integer.parseInt((String)request.getSession().getAttribute("id"));
 //            System.out.println(request.getSession().getAttribute("id"));
-            int year = Integer.parseInt(request.getParameter("Year"));
-            int month = Integer.parseInt(request.getParameter("Month"));
-            int day = Integer.parseInt(request.getParameter("Day"));
-            Date start = new Date(year,month,day);
-//            System.out.println(start);
-            int year1 = Integer.parseInt(request.getParameter("Year2"));
-            int month1 = Integer.parseInt(request.getParameter("Month2"));
-            int day1 = Integer.parseInt(request.getParameter("Day2"));
-            Date end = new Date(year1,month1,day1);
+//            int year = Integer.parseInt(request.getParameter("Year"));
+//            int month = Integer.parseInt(request.getParameter("Month"));
+//            int day = Integer.parseInt(request.getParameter("Day"));
+//            Date start = new Date(year,month,day);
+////            System.out.println(start);
+//            int year1 = Integer.parseInt(request.getParameter("Year2"));
+//            int month1 = Integer.parseInt(request.getParameter("Month2"));
+//            int day1 = Integer.parseInt(request.getParameter("Day2"));
+//            Date end = new Date(year1,month1,day1);
 //            System.out.println(end);
             int price =Integer.parseInt(request.getParameter("price"));
 //            System.out.println(price);
@@ -49,7 +49,7 @@ public class EditRoomServlet extends HttpServlet {
             String password = (String)request.getSession().getAttribute("password");
             int AccId = Integer.parseInt(am.getAcc(email,password).getId());
 //            System.out.println(AccId);
-            rm.updateRoom(roomId, start, end, price, request.getParameter("img"), AccId, nBeds, wifi, tv, hotWater);
+            rm.updateRoom(roomId, new Date(), new Date(), price, request.getParameter("img"), AccId, nBeds, wifi, tv, hotWater);
 //            System.out.println("aqaaaa");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         } catch (Exception e) {

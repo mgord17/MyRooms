@@ -1,8 +1,12 @@
+import DB.MyDBInfo;
 import DB.RoomsDB;
 import Manager.AccountManager;
 import Manager.RoomManager;
 import Model.Room;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -10,19 +14,20 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+
 public class Main {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-//        AccountManager mng = AccountManager.getInstance();
-//        mng.createAccount("admin", "admin", "admin@gmail.com", "admin", "admin", "2020-07-26");
-//        System.out.println(mng.getAllAccs().toString());
-        RoomsDB db = RoomsDB.getInstance();
-        Date date1 = new Date(1223344);
-        Date date2 = Date.valueOf(LocalDate.now());
-        //db.updateRoom(1, date, date, 20, "", 1, 4, false, false, false);
-        RoomManager mng = RoomManager.getInstance();
-        mng.addRoom(date1, date2, 20, "", 1, 4, false, true, false);
-        //Room curRom = db.getRoom(1);
-        //System.out.println(curRom.toString());
+    public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
+        File myObj = new File(MyDBInfo.PROJECT_IMAGES_PATH + "123.jpg");
+        File ff = new File(MyDBInfo.PROJECT_IMAGES_PATH + "94.jpg");
+        if (myObj.createNewFile()) {
+            System.out.println("File created: " + myObj.getName());
+            System.out.println(myObj.getAbsolutePath());
+        } else {
+            System.out.println("File already exists.");
+            System.out.println(myObj.getAbsolutePath());
+        }
+        Files.copy(ff.toPath(), myObj.toPath(), REPLACE_EXISTING);
 
     }
 }
