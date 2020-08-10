@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.nio.file.Files;
-import java.security.NoSuchAlgorithmException;
+import java.security.*;
 import java.util.Date;
 
 @WebServlet(name = "AddRoomServlet", urlPatterns = {"/AddRoomServlet"})
@@ -43,7 +43,7 @@ public class AddRoomServlet extends HttpServlet {
             writefile((String)request.getParameter("img"));
             rm.addRoom(start, end, price,request.getParameter("img"),id,nBeds,wifi,tv,hotWater);
             request.getRequestDispatcher("index.jsp").forward(request, response);
-        } catch (NoSuchAlgorithmException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }

@@ -68,6 +68,9 @@
                 <label>Username: <%=curAcc.getUsername()%></label><br>
                 <label>Phone: <%=curAcc.getPhone()%></label><br>
                 <a href="EditAccount.jsp">Edit Account</a>
+                <form action="../DeleteAccountServlet" method="post">
+                    <input type="submit" value="Delete Account">
+                </form>
             </div>
         </div>
 
